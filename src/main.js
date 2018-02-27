@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from '@/App'
 import router from '@/router'
+import store from '@/store/store.js'
 import element from 'element-ui'
 import '@/assets/css/reset.css'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -15,6 +16,7 @@ Vue.use(element)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

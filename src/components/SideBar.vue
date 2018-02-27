@@ -73,11 +73,13 @@
 </template>
 
 <script>
+
   export default {
     name: "SideBar",
     methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
+        this.$store
       },
       handleClose(key, keyPath) {
         console.log(key, keyPath);

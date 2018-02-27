@@ -8,7 +8,9 @@
       <el-aside width="200px">
         <side-bar></side-bar>
       </el-aside>
-      <el-main>Main</el-main>
+      <el-main>
+        <main-content></main-content>
+      </el-main>
     </el-container>
   </el-container>
 </div>
@@ -18,11 +20,13 @@
 <script>
   import TopBar from './HelloWorld'
   import SideBar from './SideBar'
+  import MainContent from './MainContent.vue'
 
   export default {
     components: {
       TopBar,
-      SideBar
+      SideBar,
+      MainContent
     }
   }
 
