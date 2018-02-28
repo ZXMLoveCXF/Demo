@@ -59,39 +59,53 @@
 
     <el-menu-item index="4">
       <i class="el-icon-menu"></i>
-      <span slot="title">导航四</span>
+      <span slot="title">{{ count }}</span>
     </el-menu-item>
     <el-menu-item index="5" disabled>
       <i class="el-icon-document"></i>
-      <span slot="title">导航五</span>
+      <span slot="title">{{ name }}</span>
     </el-menu-item>
     <el-menu-item index="6">
       <i class="el-icon-setting"></i>
-      <span slot="title">导航六</span>
+      <span slot="title">{{ age }}</span>
     </el-menu-item>
+    <div>{{ doneTodos }}</div>
+     <div>{{ doneTodosCount }}</div>
   </el-menu>
 </template>
 
 <script>
-
-  export default {
-    name: "SideBar",
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-        this.$store
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
+import { mapMutations, mapState,mapGetters } from "vuex";
+export default {
+  name: "SideBar",
+  methods: {
+    handleOpen(key, keyPath) {
+      console.log(key, keyPath);
+      this.$store;
+    },
+    handleClose(key, keyPath) {
+      console.log(key, keyPath);
     }
-  };
-
+  },
+  computed: {
+    ...mapState({
+      count: 'count',
+      name: 'name',
+      age: 'age'
+    }),
+    ...mapGetters({
+      doneTodos:'doneTodos',
+      doneTodosCount:'doneTodosCount'
+    }),
+    ...mapMutations({
+      add: 'increment'
+    })
+  }
+};
 </script>
 
 <style scoped>
-  .el-menu-vertical-demo {
-    height: 100%;
-  }
-
+.el-menu-vertical-demo {
+  height: 100%;
+}
 </style>
